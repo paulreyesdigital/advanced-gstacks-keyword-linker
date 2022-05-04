@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #list{
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 2rem;
+  }
+</style>
+<body>
+
+  <div id="list" contenteditable="true"></div>
+
+  <script src="./keywords.js"></script>
+  <script src="./urls.js"></script>
+  <script defer>
+    let index = 0;
+    let list = document.querySelector('#list');
+
+    let string = "";
+
+    // write 
+    keywords.forEach((keyword, i) =>{
+      if(index === urls.length - 1) index = 0;
+      // string += `<a href="${urls[index]}">${keyword} Pro Carpet Cleaning Swansea</a><br>`
+      // string += `<a href="${urls[index]}">${keyword} Perfectly Trimmed Palms Houston TX</a><br>`
+      string += `<a href="${urls[index]}">${urls[index]}</a><br>`
+      console.log(keyword, i)
+      index++;
+    });
+
+    document.querySelector('#list').innerHTML = string;
+
+
+  </script>
+</body>
+</html>
